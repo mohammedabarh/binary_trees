@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * bal - Measures the balance factor of an AVL tree.
- * @tree: Double pointer to the tree node for balance adjustment.
- * Return: None.
+ * bal - Measures balance factor of a AVL
+ * @tree: tree to go through
+ * Return: balanced factor
  */
 void bal(avl_t **tree)
 {
@@ -21,11 +21,10 @@ void bal(avl_t **tree)
 	else if (bval < -1)
 		*tree = binary_tree_rotate_left((binary_tree_t *)*tree);
 }
-
 /**
- * successor - Finds the next successor, i.e., the minimum node in the right subtree.
- * @node: Pointer to the node from which to find the successor.
- * Return: The minimum value of the subtree rooted at the given node.
+ * successor - get the next successor i mean the min node in the right subtree
+ * @node: tree to check
+ * Return: the min value of this tree
  */
 int successor(bst_t *node)
 {
@@ -44,12 +43,12 @@ int successor(bst_t *node)
 		}
 		return (left);
 	}
-}
 
+}
 /**
- * remove_type - Determines how to remove a node based on its children.
- * @root: The node to be removed.
- * Return: 0 if the node has no children, or another value if it has children.
+ *remove_type - function that removes a node depending of its children
+ *@root: node to remove
+ *Return: 0 if it has no children or other value if it has
  */
 int remove_type(bst_t *root)
 {
@@ -92,12 +91,11 @@ int remove_type(bst_t *root)
 		return (new_value);
 	}
 }
-
 /**
- * bst_remove - Removes a node from a Binary Search Tree (BST).
- * @root: Pointer to the root of the tree.
- * @value: The value of the node to remove.
- * Return: Pointer to the modified tree.
+ * bst_remove - remove a node from a BST tree
+ * @root: root of the tree
+ * @value: node with this value to remove
+ * Return: the tree changed
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
@@ -121,10 +119,10 @@ bst_t *bst_remove(bst_t *root, int value)
 }
 
 /**
- * avl_remove - Removes a node from an AVL tree.
- * @root: Pointer to the root of the AVL tree.
- * @value: The value of the node to remove.
- * Return: Pointer to the modified AVL tree.
+ * avl_remove - remove a node from a AVL tree
+ * @root: root of the tree
+ * @value: node with this value to remove
+ * Return: the tree changed
  */
 avl_t *avl_remove(avl_t *root, int value)
 {
